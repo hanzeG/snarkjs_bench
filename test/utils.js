@@ -1,26 +1,62 @@
-function getRandomBigInt(bits) {
-    const hexLength = Math.ceil(bits / 4);
-    let hexString = '0x';
+const { Scalar, getCurveFromName } = require("ffjavascript");
+const crypto = require('crypto');
+const { off } = require("process");
 
-    for (let i = 0; i < hexLength; i++) {
-        hexString += Math.floor(Math.random() * 16).toString(16);
-    }
-
-    return BigInt(hexString);
+function getRandomScalar(n, r) {
+    let scalar;
+    let array = new Uint8Array(n);
+    do {
+        array = crypto.randomFillSync(array);
+        scalar = Scalar.e(uint8ArrayToBigInt(array));
+        scalar = scalar % r;
+    } while (Scalar.gt(scalar.toString(), r.toString()));
+    return scalar;
 }
 
-function getRandomBigIntArray(n, bits) {
-    const bigIntArray = [];
-    for (let i = 0; i < n; i++) {
-        bigIntArray.push(getRandomBigInt(bits));
+function generateRandomScalars(r, rounds, n) {
+    const scalars = [];
+    for (let i = 0; i < rounds; i++) {
+        scalars.push(getRandomScalar(n, r));
     }
-    return bigIntArray;
+    return scalars;
 }
 
-// const randomBigIntArray = getRandomBigIntArray(10, 256);
-// console.log(randomBigIntArray);
+function uint8ArrayToBigInt(uint8Array) {
+    let hexString = Array.from(uint8Array)
+        .map(byte => byte.toString(16).padStart(2, '0'))
+        .join('');
+    let bigIntValue = BigInt('0x' + hexString);
+    return bigIntValue;
+}
+
+function bigIntToUint8Array(bigInt, arraySize) {
+    const uint8Array = new Uint8Array(arraySize);
+
+    let hexString = bigInt.toString(16);
+
+    if (hexString.length % 2 !== 0) {
+        hexString = '0' + hexString;
+    }
+
+    const byteArray = hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16));
+
+    for (let i = 0; i < byteArray.length; i++) {
+        uint8Array[arraySize - byteArray.length + i] = byteArray[i];
+    }
+
+    return uint8Array;
+}
+
+function rotateRight(arr, positions) {
+    const len = arr.length;
+    const offset = positions % len;
+    if (offset === 0) return arr.slice();
+
+    return arr.slice(-offset).concat(arr.slice(0, len - offset));
+}
 
 module.exports = {
-    getRandomBigInt,
-    getRandomBigIntArray
+    getRandomScalar,
+    generateRandomScalars,
+    rotateRight
 };
