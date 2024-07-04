@@ -4,42 +4,34 @@ include "./utils.circom";
 include "./gmimc_constants.circom";
 include "../node_modules/circomlib/circuits/bitify.circom";
 
-template Rotate_right(n, x) {
-    signal input in;
-    signal output out;
+template Rotate_right(t) {
+    signal input in[t];
+    signal output out[t];
 
-    template n2b = Num2Bits(n);
-    template b2n = Bits2Num(n);
-
-    n2b.in <== in;
-
-    for (var i = 0; i < x, i++) {
-        b2n.in[i] <== n2b.out[n - x + i];
+    out[0] <== in[t - 1];
+    for (var i = 1; i < t; i++){
+        out[i] <== in[i - 1];
     }
-
-    for (var i = 0; i < n - x, i++) {
-        b2n.in[x + i] <== n2b.out[i];
-    }
-
-    out <== b2n.out;
 }
 
 template Round(t, rc) {
     signal input in[t];
     signal output out[t];
 
-    template sigma = Sigma();
+    component sigma = Sigma();
 
     sigma.in <== in[0] + rc;
 
-    for(var i = 0; i < t, i++) {
-        out[i+1] <== in[i+1] + sigma.out;
+    out[0] <== in[0];
+
+    for(var i = 1; i < t; i++) {
+        out[i] <== in[i] + sigma.out;
     }
 }
 
 template Permutation_not_opt(nInputs) {
     signal input in[nInputs];
-    signal input out[nInputs];
+    signal output outputs[nInputs];
 
     var t = nInputs;
     var rounds = 226;
@@ -49,31 +41,66 @@ template Permutation_not_opt(nInputs) {
         currentState[i] = in[i];
     }
 
-    template round[rounds + 1];
-    template rotate_right[rounds][t];
+    component round[rounds];
+    component rotate_right[rounds];
 
-    for (var i = 0; i < rounds; i++) {
+    for (var i = 0; i < rounds - 1; i++) {
         round[i] = Round(t, RC[i]);
+        rotate_right[i] = Rotate_right(t);
 
         for (var j = 0; j < t; j++) {
             round[i].in[j] <== currentState[j];
         }
 
         for (var j = 0; j < t; j++) {
-            rotate_right[i][j] = Rotate_right(256, 1);
+            rotate_right[i].in[j] <== round[i].out[j];
+        }
 
-            rotate_right[i][j].in <== round[i].out[j];
-            currentState[j] = rotate_right[i][j].out;
+        for (var j = 0; j < t; j++) {
+            currentState[j] = rotate_right[i].out[j];
         }
     }
-    
-    round[rounds] = Round(t, RC[rounds - 1]);
+
+    // last permutation without rotation
+    round[rounds - 1] = Round(t, RC[rounds - 1]);
     
     for (var i = 0; i < t; i++) {
-        round[rounds].in[i] <== currentState[j];
+        round[rounds - 1].in[i] <== currentState[i];
     }
 
     for (var i = 0; i < t; i++) {
-        out[i] <== round[rounds].out[i];
+        outputs[i] <== round[rounds - 1].out[i];
+    }
+}
+
+template Permutation(nInputs) {
+    signal input in[nInputs];
+    signal output out[nInputs];
+
+    var t = nInputs;
+
+    if(t < 8) {
+        component permutationNotOpt = Permutation_not_opt(t);
+        for (var i = 0; i < t; i++) {
+            permutationNotOpt.in[i] <== in[i];
+        }
+
+        for (var i = 0; i < t; i++) {
+            out[i] <== permutationNotOpt.outputs[i];
+        }
+    }
+}
+
+template GMiMC(nInputs, nOutputs) {
+    signal input inputs[nInputs];
+    signal output out[nOutputs];
+
+    component permutation = Permutation(nInputs);
+    for (var i = 0; i < nInputs; i++) {
+        permutation.in[i] <== inputs[i];
+    }
+    
+    for (var i = 0; i < nOutputs; i++) {
+        out[i] <== permutation.out[i];
     }
 }
