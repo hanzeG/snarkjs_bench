@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test_p2": "mocha test/poseidon2.js",
-    "test_g": "mocha test/gmimc.js"
+    "test_g": "mocha test/gmimc.js",
+    "test_n": "mocha test/neptune.js"
   },
   "repository": {
     "type": "git",
