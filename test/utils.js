@@ -1,6 +1,5 @@
 const { Scalar, getCurveFromName } = require("ffjavascript");
 const crypto = require('crypto');
-const { off } = require("process");
 
 function getRandomScalar(n, r) {
     let scalar;
@@ -55,8 +54,16 @@ function rotateRight(arr, positions) {
     return arr.slice(-offset).concat(arr.slice(0, len - offset));
 }
 
+function swap(arr, index1, index2) {
+    let newArr = [...arr];
+    [newArr[index1], newArr[index2]] = [newArr[index2], newArr[index1]];
+
+    return newArr;
+}
+
 module.exports = {
     getRandomScalar,
     generateRandomScalars,
-    rotateRight
+    rotateRight,
+    swap
 };
