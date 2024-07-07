@@ -290,7 +290,6 @@ template Neptune(nInputs, nOutputs) {
     }
 
     for (var i = 0; i < nOutputs; i++) {
-        log(permutation.out[i]);
         outputs[i] <== permutation.out[i];
     }
 }

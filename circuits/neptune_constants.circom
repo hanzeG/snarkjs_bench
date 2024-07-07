@@ -152,7 +152,7 @@ function NEPTUNE_RC(t) {
             ];
   } else {
         assert(0);
-        return [[0]],;
+        return [[0]];
     }
 }
 
