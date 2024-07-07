@@ -2,7 +2,6 @@ pragma circom 2.0.0;
 
 include "./utils.circom";
 include "./gmimc_constants.circom";
-include "../node_modules/circomlib/circuits/bitify.circom";
 
 template Rotate_right(t) {
     signal input in[t];
