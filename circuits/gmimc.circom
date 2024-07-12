@@ -3,16 +3,6 @@ pragma circom 2.0.0;
 include "./utils.circom";
 include "./gmimc_constants.circom";
 
-template Rotate_right(t) {
-    signal input in[t];
-    signal output out[t];
-
-    out[0] <== in[t - 1];
-    for (var i = 1; i < t; i++){
-        out[i] <== in[i - 1];
-    }
-}
-
 template Round(t, rc) {
     signal input in[t];
     signal output out[t];
