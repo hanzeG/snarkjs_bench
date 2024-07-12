@@ -52,3 +52,23 @@ template AddRC(t, rc) {
         out[i] <== in[i] + rc[i]; 
     }
 }
+
+template Rotate_right(t) {
+    signal input in[t];
+    signal output out[t];
+
+    out[0] <== in[t - 1];
+    for (var i = 1; i < t; i++){
+        out[i] <== in[i - 1];
+    }
+}
+
+template Rotate_left(t) {
+    signal input in[t];
+    signal output out[t];
+
+    out[t - 1] <== in[0];
+    for (var i = 0; i < t - 1; i++){
+        out[i] <== in[i + 1];
+    }
+}

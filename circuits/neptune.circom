@@ -16,13 +16,72 @@ template External_4() {
         swap.in[i] <== in[i];
     }
 
-    sum1 = swap.out[0] + swap.out[2];
-    sum2 = swap.out[1] + swap.out[3];
+    sum1 = in[0] + in[2];
+    sum2 = in[1] + in[3];
 
     out[0] <== swap.out[0] + sum1;
     out[1] <== swap.out[1] + sum2;
     out[2] <== swap.out[2] + sum1;
     out[3] <== swap.out[3] + sum2;
+}
+
+template External_8() {
+    signal input in[8];
+    signal output out[8];
+
+    component swap1 = Swap(8, 1, 7);
+    component swap2 = Swap(8, 3, 5);
+        
+    for (var i = 0; i < 8; i++) {
+        swap1.in[i] <== in[i];
+    }
+
+    for (var i = 0; i < 8; i++) {
+        swap2.in[i] <== swap1.out[i];
+    }
+
+    var sum1 = 0;
+    var sum2 = 0;
+
+    for (var i = 0; i < 4; i++) {
+        sum1 += in[i * 2];
+        sum2 += in[i * 2 + 1];
+    }
+
+    component rotateLeft1 = Rotate_left(8);
+    component rotateLeft2 = Rotate_left(8);
+
+    var current_state[8];
+
+    for (var i = 0; i < 8; i++) {
+        current_state[8] = swap2.out[i];
+        rotateLeft1.in[i] <== swap2.out[i];
+    }
+
+    for (var i = 0; i < 8; i++) {
+        rotateLeft2.in[i] <== rotateLeft1.out[i];
+    }
+
+    var ro[8];
+
+    for (var i = 0; i < 8; i++) {
+        ro[i] = rotateLeft2.out[i];
+    }
+
+    for (var i = 0; i < 4; i++) {
+        current_state[2 * i] = current_state[2 * i] * 2 + ro[2 * i] + sum1;
+        current_state[2 * i + 1] = current_state[2 * i + 1] * 2 + ro[2 * i + 1] + sum2;
+    }
+
+    component swap3 = Swap(8, 3, 7);
+
+    for (var i = 0; i < 8; i++) {
+        swap3.in[i] <== current_state[i];
+    }
+
+    for (var i = 0; i < 8; i++) {
+        out[i] <== swap3.out[i];
+    }
 }
 
 template External_Matmul(t, E) {
@@ -40,6 +99,16 @@ template External_Matmul(t, E) {
 
         for (var i = 0; i < t; i++) {
             out[i] <== external_4.out[i];
+        }
+    } else if (t == 8) {
+        component external_8 = External_8();
+
+        for (var i = 0; i < t; i++) {
+            external_8.in[i] <== in[i];
+        }
+
+        for (var i = 0; i < t; i++) {
+            out[i] <== external_8.out[i];
         }
     } else {
         var t_2 = t / 2;
