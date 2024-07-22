@@ -72,3 +72,63 @@ template Rotate_left(t) {
         out[i] <== in[i + 1];
     }
 }
+
+template DotProduct(t) {
+    signal input in1[t];
+    signal input in2[t];
+    signal output out;
+
+    signal sum[t];
+
+    sum[0] <== in1[0] * in2[0];
+    for (var i = 1; i < t; i++) {
+        sum[i] <== sum[i-1] + in1[i] * in2[i];
+    }
+
+    out <== sum[t-1];
+}
+
+template Pow(exp) {
+    signal input a;
+    signal output result;
+
+    if (exp == 0) {
+        result <== 1;
+    } else if (exp == 1) {
+        result <== a;
+    } else {
+        signal tmp;
+        component powNMinus1 = Pow(exp-1);
+        powNMinus1.a <== a;
+        tmp <== powNMinus1.result;
+        result <== tmp * a;
+    }
+}
+
+template Pow5Inverse() {
+    signal input a;
+    signal output result;
+
+    var PRIME_FIELD = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
+
+    // a^5
+    signal a_pow_5;
+    
+    component pow5 = Sigma();
+    pow5.in <== a;
+    a_pow_5 <== pow5.out;
+
+    // a^5 INV
+    var p_minus_2;
+    p_minus_2 = PRIME_FIELD - 2;
+
+    signal inv_a_pow_5;
+
+    component pow = Pow(p_minus_2);
+
+    pow.a <== a_pow_5;
+
+    inv_a_pow_5 <== pow.result;
+
+    result <== inv_a_pow_5;
+}
