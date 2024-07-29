@@ -8,7 +8,7 @@ const { utils, getCurveFromName } = require("ffjavascript");
 
 const neptune_constants = require("./neptune_constants.js");
 
-const { swap } = require("./utils.js");
+const { swap } = require("./utils");
 
 function External4(F, input) {
     const t = input.length;
