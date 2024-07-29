@@ -42,52 +42,38 @@ template Permutation_not_opt(nInputs) {
     var RC[rounds][t] = RESCUE_RC(t);
     var MDS[t][t] = RESCUE_MDS(t);
 
-    var INV;
-
     var currentState[t];
+    // initial round
     for (var i = 0; i < t; i++) {
         currentState[i] = in[i] + RC[0][i];
     }
 
     component round[rounds - 1];
 
-    var r_2 = (rounds + 1) / 2;
+    var r_2 = rounds \ 2;
 
-    component pow5inverse[r_2 + 1][t];
-    component pow5[r_2 + 1][t];
+    component pow5inverse[r_2][t];
+    component pow5[r_2][t];
 
-    round[0] = Round(t, 1, MDS, RC);
-
-    for (var i = 0; i < t; i++) {
-        pow5inverse[0][i] = Pow5Inverse();
-        pow5inverse[0][i].a <== currentState[i];
-        round[0].in[i] <== pow5inverse[0][i].result;
-    }
-
-    for (var i = 0; i < t; i++) {
-        currentState[i] = round[0].out[i];
-        log(currentState[i]);
-    }
-
-    for (var i = 1; i < r_2; i++) {
-        round[2 * i - 1] = Round(t, 2 * i, MDS, RC);
-
-        for (var j = 0; j < t; j++) {
-            pow5[i][j] = Sigma();
-            pow5[i][j].in <== currentState[j];
-            round[2 * i - 1].in[j] <== pow5[i][j].out;
-        }
-
+    for (var i = 0; i < r_2; i++) {
+        // odd rounds
         round[2 * i] = Round(t, 2 * i + 1, MDS, RC);
-
         for (var j = 0; j < t; j++) {
-            pow5inverse[i][j] = Pow5Inverse();
-            pow5inverse[i][j].a <== round[2 * i - 1].out[j];
-            round[2 * i].in[j] <== pow5inverse[i][j].result;
+            pow5inverse[i][j] = InvPow5();
+            pow5inverse[i][j].in <== currentState[j];
+            round[2 * i].in[j] <== pow5inverse[i][j].out;
+        }
+
+        // even rounds
+        round[2 * i + 1] = Round(t, 2 * i + 2, MDS, RC);
+        for (var j = 0; j < t; j++) {
+            pow5[i][j] = Pow5();
+            pow5[i][j].in <== round[2 * i].out[j];
+            round[2 * i + 1].in[j] <== pow5[i][j].out;
         }
 
         for (var j = 0; j < t; j++) {
-            currentState[j] = round[2 * i].out[j];
+            currentState[j] = round[2 * i + 1].out[j];
         }
     }
 

@@ -88,47 +88,22 @@ template DotProduct(t) {
     out <== sum[t-1];
 }
 
-template Pow(exp) {
-    signal input a;
-    signal output result;
-
-    if (exp == 0) {
-        result <== 1;
-    } else if (exp == 1) {
-        result <== a;
-    } else {
-        signal tmp;
-        component powNMinus1 = Pow(exp-1);
-        powNMinus1.a <== a;
-        tmp <== powNMinus1.result;
-        result <== tmp * a;
-    }
+template Pow5() {
+    signal input in;
+    signal output out;
+    signal in2;
+    signal in4;
+    in2 <== in*in;
+    in4 <== in2*in2;
+    out <== in4*in;
 }
 
-template Pow5Inverse() {
-    signal input a;
-    signal output result;
-
-    var PRIME_FIELD = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
-
-    // a^5
-    signal a_pow_5;
-    
-    component pow5 = Sigma();
-    pow5.in <== a;
-    a_pow_5 <== pow5.out;
-
-    // a^5 INV
-    var p_minus_2;
-    p_minus_2 = PRIME_FIELD - 2;
-
-    signal inv_a_pow_5;
-
-    component pow = Pow(p_minus_2);
-
-    pow.a <== a_pow_5;
-
-    inv_a_pow_5 <== pow.result;
-
-    result <== inv_a_pow_5;
+template InvPow5() {
+    signal input in;
+    signal output out;
+    component pow5;
+    pow5 = Pow5();
+    pow5.in <-- in ** 17510594297471420177797124596205820070838691520332827474958563349260646796493; // inv 5
+    pow5.out === in;
+    out <== pow5.in;
 }
