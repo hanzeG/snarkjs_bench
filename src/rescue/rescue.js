@@ -63,7 +63,7 @@ class Rescue {
             current_state[i] = F.add(current_state[i], F.e(RC[0][i]));
         }
 
-        current_state.map(a => F.toObject(a));
+        current_state = current_state.map(a => F.toObject(a));
 
         for (let i = 1; i < rounds; i++) {
             current_state = this.InternalRound(current_state, i);
@@ -79,3 +79,22 @@ class Rescue {
 }
 
 module.exports = Rescue;
+
+
+// async function main() {
+//     let prime;
+//     let F;
+
+//     prime = await getCurveFromName("bn128", true);
+//     F = prime.Fr;
+
+//     const np = new RescueParas(F, 3, 5, 0x26b6a528b427b35493736af8679aad17535cb9d394945a0dcfe7f7a98ccccccdn, 45);
+//     const npp = new Rescue(F, np);
+//     // let abc = np.round_constants.map(a => F.toObject(a))
+//     let abc = npp.Permutation([28829699159647608n, 7521419745152037748n, 2n]);
+//     let abcac = npp.Permutation([1n, 2n, 3n]);
+//     console.log(abc);
+//     console.log(abcac);
+// }
+
+// main();
