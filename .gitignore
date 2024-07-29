@@ -1,1 +1,3 @@
 node_modules
+/bench/.ptau
+**/circuit_gen/

@@ -6,7 +6,8 @@
   "scripts": {
     "test_p2": "mocha test/poseidon2.js",
     "test_g": "mocha test/gmimc.js",
-    "test_n": "mocha test/neptune.js"
+    "test_n": "mocha test/neptune.js",
+    "test_r": "mocha test/rescue.js"
   },
   "repository": {
     "type": "git",
