@@ -1,6 +1,13 @@
 # ZK-Friendly Hash Function Implementation in Circom
 
-This repository contains the Circom implementations of the GMiMC, Neptune, Poseidon2, and Rescue hash functions. Circom is a domain-specific language designed for zero-knowledge proofs. Plain permutation and parameters generation (still need security check) implementation is at `./src` using [ffjavascript v0.3.0](https://github.com/iden3/ffjavascript.git), circuit templates are at `./circuits` using [Circom v2.1.9](https://github.com/iden3/circom.git), and a simple benchmark script written in bash is at `./bench`.
+This repository contains the Circom implementations of the [GMiMC](https://eprint.iacr.org/2019/397.pdf), [Neptune](https://eprint.iacr.org/2021/1695.pdf), [Poseidon2](https://eprint.iacr.org/2023/323.pdf), and [Rescue](https://eprint.iacr.org/2020/1143) hash functions. Circom is a domain-specific language designed for zero-knowledge proofs. Plain permutation and parameters generation (still need security check) implementation is at `./src` using [ffjavascript v0.3.0](https://github.com/iden3/ffjavascript.git), circuit templates are at `./circuits` using [Circom v2.1.9](https://github.com/iden3/circom.git), and a simple benchmark script written in bash is at `./bench`.
+
+| Algorithm | Rounds              |
+| --------- | ------------------- |
+| GMiMC     | 226                 |
+| Neptune   | 6 Full + 68 Partial |
+| Poseidon2 | 8 Full + 56 Partial |
+| Rescue    | 44                  |
 
 ## Installation
 
