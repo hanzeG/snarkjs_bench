@@ -28,8 +28,22 @@ This repository contains the Circom implementations of the [GMiMC](https://eprin
 
 ## Benchmark
 
-1. Benchmark in groth16: `bash ./bench/groth16.sh`
+1. Benchmark in *groth16*: `bash ./bench/groth16.sh`
 
-2. Benchmark in plonk: `bash ./bench/plonk.sh`
+2. Benchmark in *plonk*: `bash ./bench/plonk.sh`
 
-3. Benchmark in fflonk: `bash ./bench/fflonk.sh`
+3. Benchmark in *fflonk*: `bash ./bench/fflonk.sh`
+
+### Benchmarking ZK-Friendly Hash Functions
+
+The below Figure *(a)* shows the relationship between the runtime of the setup and prove phases in *groth16* proof system and the depth of the Merkle tree for circuit templates containing five types of ZK-friendly hash functions. In each template for different Merkle tree depths, the runtime of the most efficient hash function is highlighted. Figure *(b)* illustrates the ratio of memory consumption among these different hash function circuit templates at various Merkle tree depths. The memory consumption of a single *MiMC* at depth 0 is set as the baseline value of 1. In each pane, resource-intensive tests are shown in dark colors, while efficient ones are in light colors.
+
+![Hash](figure/hash.png)
+
+The below Figure *(a)* shows the relationship between the runtime of the setup and prove phases and the depth of the Merkle tree for *MiMC* hash function circuit templates across three proof systems. In each template for different Merkle tree depths, the runtime of the most efficient hash function is highlighted. Figure *(b)* illustrates the ratio of memory consumption among these test circuits running on different proof systems at various Merkle tree depths. The memory consumption of a single *MiMC* in *groth16* at depth 0 is set as the baseline value of 1.
+
+![Proof](figure/proof.png)
+
+The below left chart shows the ratio of RAM consumption during the prove phase to the RAM consumption during the setup phase for circuit templates containing five types of ZK-friendly hash functions in *groth16* at different Merkle tree depths. The right chart shows the same ratio for *MiMC* hash function circuit templates across three proof systems at different Merkle tree depths. In each pane, resource-intensive tests are shown in dark colors, while efficient ones are in light colors.
+
+![Setup and Prove Phase RAM Ratio](figure/r.png)
