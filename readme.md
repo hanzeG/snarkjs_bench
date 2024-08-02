@@ -40,9 +40,13 @@ The below Figure *(a)* shows the relationship between the runtime of the setup a
 
 ![Hash](figure/hash.png)
 
+### Benchmarking Proof Systems
+
 The below Figure *(a)* shows the relationship between the runtime of the setup and prove phases and the depth of the Merkle tree for *MiMC* hash function circuit templates across three proof systems. In each template for different Merkle tree depths, the runtime of the most efficient hash function is highlighted. Figure *(b)* illustrates the ratio of memory consumption among these test circuits running on different proof systems at various Merkle tree depths. The memory consumption of a single *MiMC* in *groth16* at depth 0 is set as the baseline value of 1.
 
 ![Proof](figure/proof.png)
+
+### Prove/ Setup Phase RAM Consumption
 
 The below left chart shows the ratio of RAM consumption during the prove phase to the RAM consumption during the setup phase for circuit templates containing five types of ZK-friendly hash functions in *groth16* at different Merkle tree depths. The right chart shows the same ratio for *MiMC* hash function circuit templates across three proof systems at different Merkle tree depths. In each pane, resource-intensive tests are shown in dark colors, while efficient ones are in light colors.
 
