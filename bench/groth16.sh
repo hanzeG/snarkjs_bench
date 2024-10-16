@@ -131,65 +131,77 @@ PROOF_SYS=(
 )
 
 CIRCUIT_NAMES=(
-    "circuits/test_vector/gmimc/mt_0"
-    "circuits/test_vector/gmimc/mt_1"
-    "circuits/test_vector/gmimc/mt_2"
-    "circuits/test_vector/gmimc/mt_3"
-    "circuits/test_vector/gmimc/mt_4"
-    "circuits/test_vector/gmimc/mt_5"
-    # "circuits/test_vector/gmimc/mt_6"
-    # "circuits/test_vector/gmimc/mt_7"
-    # "circuits/test_vector/gmimc/mt_8"
-    # "circuits/test_vector/gmimc/mt_9"
-    # "circuits/test_vector/gmimc/mt_10"
-
-    "circuits/test_vector/mimc/mt_0"
-    "circuits/test_vector/mimc/mt_1"
-    "circuits/test_vector/mimc/mt_2"
-    "circuits/test_vector/mimc/mt_3"
-    "circuits/test_vector/mimc/mt_4"
-    "circuits/test_vector/mimc/mt_5"
+    # "circuits/test_vector/mimc/mt_0"
+    # "circuits/test_vector/mimc/mt_1"
+    # "circuits/test_vector/mimc/mt_2"
+    # "circuits/test_vector/mimc/mt_3"
+    # "circuits/test_vector/mimc/mt_4"
+    # "circuits/test_vector/mimc/mt_5"
     # "circuits/test_vector/mimc/mt_6"
     # "circuits/test_vector/mimc/mt_7"
     # "circuits/test_vector/mimc/mt_8"
     # "circuits/test_vector/mimc/mt_9"
     # "circuits/test_vector/mimc/mt_10"
 
-    "circuits/test_vector/poseidon/mt_0"
-    "circuits/test_vector/poseidon/mt_1"
-    "circuits/test_vector/poseidon/mt_2"
-    "circuits/test_vector/poseidon/mt_3"
-    "circuits/test_vector/poseidon/mt_4"
-    "circuits/test_vector/poseidon/mt_5"
+    # "circuits/test_vector/poseidon/mt_0"
+    # "circuits/test_vector/poseidon/mt_1"
+    # "circuits/test_vector/poseidon/mt_2"
+    # "circuits/test_vector/poseidon/mt_3"
+    # "circuits/test_vector/poseidon/mt_4"
+    # "circuits/test_vector/poseidon/mt_5"
     # "circuits/test_vector/poseidon/mt_6"
     # "circuits/test_vector/poseidon/mt_7"
     # "circuits/test_vector/poseidon/mt_8"
     # "circuits/test_vector/poseidon/mt_9"
     # "circuits/test_vector/poseidon/mt_10"
 
-    "circuits/test_vector/poseidon2/mt_0"
-    "circuits/test_vector/poseidon2/mt_1"
-    "circuits/test_vector/poseidon2/mt_2"
-    "circuits/test_vector/poseidon2/mt_3"
-    "circuits/test_vector/poseidon2/mt_4"
-    "circuits/test_vector/poseidon2/mt_5"
+    # "circuits/test_vector/poseidon2/mt_0"
+    # "circuits/test_vector/poseidon2/mt_1"
+    # "circuits/test_vector/poseidon2/mt_2"
+    # "circuits/test_vector/poseidon2/mt_3"
+    # "circuits/test_vector/poseidon2/mt_4"
+    # "circuits/test_vector/poseidon2/mt_5"
     # "circuits/test_vector/poseidon2/mt_6"
     # "circuits/test_vector/poseidon2/mt_7"
     # "circuits/test_vector/poseidon2/mt_8"
     # "circuits/test_vector/poseidon2/mt_9"
     # "circuits/test_vector/poseidon2/mt_10"
 
-    # "circuits/test_vector/neptune/mt_0"
+    "circuits/test_vector/neptune/mt_0"
     # "circuits/test_vector/neptune/mt_1"
     # "circuits/test_vector/neptune/mt_2"
     # "circuits/test_vector/neptune/mt_3"
     # "circuits/test_vector/neptune/mt_4"
     # "circuits/test_vector/neptune/mt_5"
-    "circuits/test_vector/neptune/mt_6"
-    "circuits/test_vector/neptune/mt_7"
-    "circuits/test_vector/neptune/mt_8"
+    # "circuits/test_vector/neptune/mt_6"
+    # "circuits/test_vector/neptune/mt_7"
+    # "circuits/test_vector/neptune/mt_8"
     # "circuits/test_vector/neptune/mt_9"
     # "circuits/test_vector/neptune/mt_10"
+
+    "circuits/test_vector/gmimc/mt_0"
+    # "circuits/test_vector/gmimc/mt_1"
+    # "circuits/test_vector/gmimc/mt_2"
+    # "circuits/test_vector/gmimc/mt_3"
+    # "circuits/test_vector/gmimc/mt_4"
+    # "circuits/test_vector/gmimc/mt_5"
+    # "circuits/test_vector/gmimc/mt_6"
+    # "circuits/test_vector/gmimc/mt_7"
+    # "circuits/test_vector/gmimc/mt_8"
+    # "circuits/test_vector/gmimc/mt_9"
+    # "circuits/test_vector/gmimc/mt_10"
+
+    "circuits/test_vector/rescue/mt_0"
+    # "circuits/test_vector/rescue/mt_1"
+    # "circuits/test_vector/rescue/mt_2"
+    # "circuits/test_vector/rescue/mt_3"
+    # "circuits/test_vector/rescue/mt_4"
+    # "circuits/test_vector/rescue/mt_5"
+    # "circuits/test_vector/rescue/mt_6"
+    # "circuits/test_vector/rescue/mt_7"
+    # "circuits/test_vector/rescue/mt_8"
+    # "circuits/test_vector/rescue/mt_9"
+    # "circuits/test_vector/rescue/mt_10"
 )
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -424,6 +436,51 @@ do
                 PTAU_NAME="pot19_final"
                 INPUT_NAME="mt_10"
                 ;;
+
+            "circuits/test_vector/rescue/mt_0")
+                PTAU_NAME="pot10_final"
+                INPUT_NAME="mt_0"
+                ;;
+            "circuits/test_vector/rescue/mt_1")
+                PTAU_NAME="pot12_final"
+                INPUT_NAME="mt_1"
+                ;;
+            "circuits/test_vector/rescue/mt_2")
+                PTAU_NAME="pot13_final"
+                INPUT_NAME="mt_2"
+                ;;
+            "circuits/test_vector/rescue/mt_3")
+                PTAU_NAME="pot12_final"
+                INPUT_NAME="mt_3"
+                ;;
+            "circuits/test_vector/rescue/mt_4")
+                PTAU_NAME="pot13_final"
+                INPUT_NAME="mt_4"
+                ;;
+            "circuits/test_vector/rescue/mt_5")
+                PTAU_NAME="pot14_final"
+                INPUT_NAME="mt_5"
+                ;;
+            "circuits/test_vector/rescue/mt_6")
+                PTAU_NAME="pot15_final"
+                INPUT_NAME="mt_6"
+                ;;
+            "circuits/test_vector/rescue/mt_7")
+                PTAU_NAME="pot16_final"
+                INPUT_NAME="mt_7"
+                ;;
+            "circuits/test_vector/rescue/mt_8")
+                PTAU_NAME="pot17_final"
+                INPUT_NAME="mt_8"
+                ;;
+            "circuits/test_vector/rescue/mt_9")
+                PTAU_NAME="pot18_final"
+                INPUT_NAME="mt_9"
+                ;;
+            "circuits/test_vector/rescue/mt_10")
+                PTAU_NAME="pot19_final"
+                INPUT_NAME="mt_10"
+                ;;
             *)
                 echo "Unknown CIRCUIT_NAME: $CIRCUIT_NAME"
                 exit 1
@@ -449,6 +506,12 @@ do
         echo ">> 1.2 Generating Witness"
         node $GEN_DIR/generate_witness.js $GEN_DIR/$INPUT_NAME.wasm $INPUT $TARGET_DIR/witness.wtns
         echo "-------------------------------------------------------"
+        echo ">> 1.3 View information about the circuit"
+        snarkjs r1cs info $TARGET_DIR/$INPUT_NAME.r1cs
+        echo "-------------------------------------------------------"
+        # echo ">> 1.4 Print the constraints"
+        # snarkjs r1cs print $TARGET_DIR/$INPUT_NAME.r1cs $TARGET_DIR/$INPUT_NAME.sym
+        # echo "-------------------------------------------------------"
 
         # ******************************************************
         # ************* Setup **************

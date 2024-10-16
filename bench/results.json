@@ -1,0 +1,306 @@
+{
+  "mimc": {
+    "m2": {
+      "prove": {
+        "user_time": "0.49",
+        "max_resident_size": "219758592"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159318016"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "0.52",
+        "max_resident_size": "252706816"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160743424"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "0.56",
+        "max_resident_size": "257720320"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160202752"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "0.58",
+        "max_resident_size": "276365312"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159186944"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "0.64",
+        "max_resident_size": "301645824"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159776768"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "0.66",
+        "max_resident_size": "306872320"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161398784"
+      }
+    },
+    "m8": {
+      "prove": {
+        "user_time": "0.68",
+        "max_resident_size": "319258624"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159809536"
+      }
+    },
+    "m9": {
+      "prove": {
+        "user_time": "0.70",
+        "max_resident_size": "332218368"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159334400"
+      }
+    },
+    "m10": {
+      "prove": {
+        "user_time": "0.73",
+        "max_resident_size": "346718208"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159039488"
+      }
+    },
+    "m11": {
+      "prove": {
+        "user_time": "0.76",
+        "max_resident_size": "341819392"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160169984"
+      }
+    },
+    "m12": {
+      "prove": {
+        "user_time": "0.85",
+        "max_resident_size": "392036352"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "160153600"
+      }
+    },
+    "m13": {
+      "prove": {
+        "user_time": "0.88",
+        "max_resident_size": "408371200"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161939456"
+      }
+    },
+    "m14": {
+      "prove": {
+        "user_time": "0.89",
+        "max_resident_size": "404914176"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "161447936"
+      }
+    },
+    "m15": {
+      "prove": {
+        "user_time": "0.93",
+        "max_resident_size": "422019072"
+      },
+      "verify": {
+        "user_time": "0.39",
+        "max_resident_size": "160628736"
+      }
+    },
+    "m16": {
+      "prove": {
+        "user_time": "0.98",
+        "max_resident_size": "432750592"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160874496"
+      }
+    }
+  },
+  "poseidon": {
+    "p2": {
+      "prove": {
+        "user_time": "0.44",
+        "max_resident_size": "192020480"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161480704"
+      }
+    },
+    "p3": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "195723264"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160858112"
+      }
+    },
+    "p4": {
+      "prove": {
+        "user_time": "0.45",
+        "max_resident_size": "197885952"
+      },
+      "verify": {
+        "user_time": "0.38",
+        "max_resident_size": "158957568"
+      }
+    },
+    "p5": {
+      "prove": {
+        "user_time": "0.45",
+        "max_resident_size": "199901184"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160464896"
+      }
+    },
+    "p6": {
+      "prove": {
+        "user_time": "0.45",
+        "max_resident_size": "201555968"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159334400"
+      }
+    },
+    "p7": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "202506240"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161267712"
+      }
+    },
+    "p8": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "203702272"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "162217984"
+      }
+    },
+    "p9": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "202784768"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160055296"
+      }
+    },
+    "p10": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "196165632"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "160038912"
+      }
+    },
+    "p11": {
+      "prove": {
+        "user_time": "0.46",
+        "max_resident_size": "196820992"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160333824"
+      }
+    },
+    "p12": {
+      "prove": {
+        "user_time": "0.47",
+        "max_resident_size": "210616320"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161267712"
+      }
+    },
+    "p13": {
+      "prove": {
+        "user_time": "0.49",
+        "max_resident_size": "217497600"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161103872"
+      }
+    },
+    "p14": {
+      "prove": {
+        "user_time": "0.48",
+        "max_resident_size": "217432064"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159547392"
+      }
+    },
+    "p15": {
+      "prove": {
+        "user_time": "0.49",
+        "max_resident_size": "217579520"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "162136064"
+      }
+    },
+    "p16": {
+      "prove": {
+        "user_time": "0.50",
+        "max_resident_size": "217989120"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159137792"
+      }
+    }
+  }
+}

@@ -17,14 +17,14 @@ CIRCUIT_NAMES=(
     # "circuits/test_vector/gmimc/mt_9"
     # "circuits/test_vector/gmimc/mt_10"
 
-    # "circuits/test_vector/mimc/mt_0"
+    "circuits/test_vector/mimc/mt_0"
     # "circuits/test_vector/mimc/mt_1"
     # "circuits/test_vector/mimc/mt_2"
     # "circuits/test_vector/mimc/mt_3"
     # "circuits/test_vector/mimc/mt_4"
     # "circuits/test_vector/mimc/mt_5"
     # "circuits/test_vector/mimc/mt_6"
-    "circuits/test_vector/mimc/mt_7"
+    # "circuits/test_vector/mimc/mt_7"
     # "circuits/test_vector/mimc/mt_8"
     # "circuits/test_vector/mimc/mt_9"
     # "circuits/test_vector/mimc/mt_10"
@@ -53,7 +53,7 @@ CIRCUIT_NAMES=(
     # "circuits/test_vector/poseidon2/mt_9"
     # "circuits/test_vector/poseidon2/mt_10"
 
-    # "circuits/test_vector/neptune/mt_0"
+    "circuits/test_vector/neptune/mt_0"
     # "circuits/test_vector/neptune/mt_1"
     # "circuits/test_vector/neptune/mt_2"
     # "circuits/test_vector/neptune/mt_3"
@@ -323,6 +323,9 @@ do
         echo ">> 1.2 Generating Witness"
         node $GEN_DIR/generate_witness.js $GEN_DIR/$INPUT_NAME.wasm $INPUT $TARGET_DIR/witness.wtns
         echo "-------------------------------------------------------"
+        echo ">> 1.3 View information about the circuit"
+        snarkjs r1cs info $TARGET_DIR/$INPUT_NAME.r1cs
+        echo "-------------------------------------------------------"
 
         # ******************************************************
         # ************* Setup **************
@@ -351,5 +354,8 @@ do
         echo "-------------------------------------------------------"
         echo ">> 3.2 Verifying proof"
         NODE_OPTIONS=--max-old-space-size=12000 /usr/bin/time -l snarkjs $PROOF_SY verify $TARGET_DIR/${PROOF_SY}_verification_key.json $TARGET_DIR/${PROOF_SY}_public.json $TARGET_DIR/${PROOF_SY}_proof.json
+
+        snarkjs zkey export solidityverifier $TARGET_DIR/$INPUT_NAME"_${PROOF_SY}_final.zkey" verifier.sol
+        snarkjs zkey export soliditycalldata $TARGET_DIR/${PROOF_SY}_public.json $TARGET_DIR/${PROOF_SY}_proof.json
     done
 done

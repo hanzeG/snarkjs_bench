@@ -1,129 +1,3 @@
-# declare -A PTAU_NAMES
-# PTAU_NAMES=( 
-#     ["circuits/test_vector/gmimc/mt_0"]="pot10_final" 
-#     ["circuits/test_vector/gmimc/mt_1"]="pot11_final" 
-#     ["circuits/test_vector/gmimc/mt_2"]="pot13_final" 
-#     ["circuits/test_vector/gmimc/mt_3"]="pot14_final" 
-#     ["circuits/test_vector/gmimc/mt_4"]="pot15_final" 
-#     ["circuits/test_vector/gmimc/mt_5"]="pot16_final" 
-#     ["circuits/test_vector/gmimc/mt_6"]="pot17_final" 
-#     ["circuits/test_vector/gmimc/mt_7"]="pot18_final" 
-#     ["circuits/test_vector/gmimc/mt_8"]="pot19_final" 
-#     ["circuits/test_vector/gmimc/mt_9"]="pot20_final" 
-#     ["circuits/test_vector/gmimc/mt_10"]="pot21_final" 
-
-#     ["circuits/test_vector/mimc/mt_0"]="pot11_final" 
-#     ["circuits/test_vector/mimc/mt_1"]="pot12_final" 
-#     ["circuits/test_vector/mimc/mt_2"]="pot14_final" 
-#     ["circuits/test_vector/mimc/mt_3"]="pot15_final" 
-#     ["circuits/test_vector/mimc/mt_4"]="pot16_final" 
-#     ["circuits/test_vector/mimc/mt_5"]="pot17_final" 
-#     ["circuits/test_vector/mimc/mt_6"]="pot18_final" 
-#     ["circuits/test_vector/mimc/mt_7"]="pot19_final" 
-#     ["circuits/test_vector/mimc/mt_8"]="pot20_final" 
-#     ["circuits/test_vector/mimc/mt_9"]="pot21_final" 
-#     ["circuits/test_vector/mimc/mt_10"]="pot22_final" 
-
-#     ["circuits/test_vector/poseidon/mt_0"]="pot8_final" 
-#     ["circuits/test_vector/poseidon/mt_1"]="pot10_final" 
-#     ["circuits/test_vector/poseidon/mt_2"]="pot11_final" 
-#     ["circuits/test_vector/poseidon/mt_3"]="pot12_final" 
-#     ["circuits/test_vector/poseidon/mt_4"]="pot13_final" 
-#     ["circuits/test_vector/poseidon/mt_5"]="pot14_final" 
-#     ["circuits/test_vector/poseidon/mt_6"]="pot15_final" 
-#     ["circuits/test_vector/poseidon/mt_7"]="pot16_final" 
-#     ["circuits/test_vector/poseidon/mt_8"]="pot17_final" 
-#     ["circuits/test_vector/poseidon/mt_9"]="pot18_final" 
-#     ["circuits/test_vector/poseidon/mt_10"]="pot19_final" 
-
-#     ["circuits/test_vector/poseidon2/mt_0"]="pot8_final" 
-#     ["circuits/test_vector/poseidon2/mt_1"]="pot10_final" 
-#     ["circuits/test_vector/poseidon2/mt_2"]="pot11_final" 
-#     ["circuits/test_vector/poseidon2/mt_3"]="pot12_final" 
-#     ["circuits/test_vector/poseidon2/mt_4"]="pot13_final" 
-#     ["circuits/test_vector/poseidon2/mt_5"]="pot14_final" 
-#     ["circuits/test_vector/poseidon2/mt_6"]="pot15_final" 
-#     ["circuits/test_vector/poseidon2/mt_7"]="pot16_final" 
-#     ["circuits/test_vector/poseidon2/mt_8"]="pot17_final" 
-#     ["circuits/test_vector/poseidon2/mt_9"]="pot18_final" 
-#     ["circuits/test_vector/poseidon2/mt_10"]="pot19_final" 
-
-#     ["circuits/test_vector/neptune/mt_0"]="pot8_final" 
-#     ["circuits/test_vector/neptune/mt_1"]="pot10_final" 
-#     ["circuits/test_vector/neptune/mt_2"]="pot11_final" 
-#     ["circuits/test_vector/neptune/mt_3"]="pot12_final" 
-#     ["circuits/test_vector/neptune/mt_4"]="pot13_final" 
-#     ["circuits/test_vector/neptune/mt_5"]="pot14_final" 
-#     ["circuits/test_vector/neptune/mt_6"]="pot15_final" 
-#     ["circuits/test_vector/neptune/mt_7"]="pot16_final" 
-#     ["circuits/test_vector/neptune/mt_8"]="pot17_final" 
-#     ["circuits/test_vector/neptune/mt_9"]="pot18_final" 
-#     ["circuits/test_vector/neptune/mt_10"]="pot19_final" 
-# )
-
-# declare -A INPUT_NAMES
-# INPUT_NAMES=( 
-#     ["circuits/test_vector/gmimc/mt_0"]="mt_0" 
-#     ["circuits/test_vector/gmimc/mt_1"]="mt_1" 
-#     ["circuits/test_vector/gmimc/mt_2"]="mt_2" 
-#     ["circuits/test_vector/gmimc/mt_3"]="mt_3" 
-#     ["circuits/test_vector/gmimc/mt_4"]="mt_4" 
-#     ["circuits/test_vector/gmimc/mt_5"]="mt_5" 
-#     ["circuits/test_vector/gmimc/mt_6"]="mt_6" 
-#     ["circuits/test_vector/gmimc/mt_7"]="mt_7" 
-#     ["circuits/test_vector/gmimc/mt_8"]="mt_8" 
-#     ["circuits/test_vector/gmimc/mt_9"]="mt_9" 
-#     ["circuits/test_vector/gmimc/mt_10"]="mt_10" 
-
-#     ["circuits/test_vector/mimc/mt_0"]="mt_0" 
-#     ["circuits/test_vector/mimc/mt_1"]="mt_1" 
-#     ["circuits/test_vector/mimc/mt_2"]="mt_2" 
-#     ["circuits/test_vector/mimc/mt_3"]="mt_3" 
-#     ["circuits/test_vector/mimc/mt_4"]="mt_4" 
-#     ["circuits/test_vector/mimc/mt_5"]="mt_5" 
-#     ["circuits/test_vector/mimc/mt_6"]="mt_6" 
-#     ["circuits/test_vector/mimc/mt_7"]="mt_7" 
-#     ["circuits/test_vector/mimc/mt_8"]="mt_8" 
-#     ["circuits/test_vector/mimc/mt_9"]="mt_9" 
-#     ["circuits/test_vector/mimc/mt_10"]="mt_10" 
-
-#     ["circuits/test_vector/poseidon/mt_0"]="mt_0" 
-#     ["circuits/test_vector/poseidon/mt_1"]="mt_1" 
-#     ["circuits/test_vector/poseidon/mt_2"]="mt_2" 
-#     ["circuits/test_vector/poseidon/mt_3"]="mt_3" 
-#     ["circuits/test_vector/poseidon/mt_4"]="mt_4" 
-#     ["circuits/test_vector/poseidon/mt_5"]="mt_5" 
-#     ["circuits/test_vector/poseidon/mt_6"]="mt_6" 
-#     ["circuits/test_vector/poseidon/mt_7"]="mt_7" 
-#     ["circuits/test_vector/poseidon/mt_8"]="mt_8" 
-#     ["circuits/test_vector/poseidon/mt_9"]="mt_9" 
-#     ["circuits/test_vector/poseidon/mt_10"]="mt_10" 
-
-#     ["circuits/test_vector/poseidon2/mt_0"]="mt_0" 
-#     ["circuits/test_vector/poseidon2/mt_1"]="mt_1" 
-#     ["circuits/test_vector/poseidon2/mt_2"]="mt_2" 
-#     ["circuits/test_vector/poseidon2/mt_3"]="mt_3" 
-#     ["circuits/test_vector/poseidon2/mt_4"]="mt_4" 
-#     ["circuits/test_vector/poseidon2/mt_5"]="mt_5" 
-#     ["circuits/test_vector/poseidon2/mt_6"]="mt_6" 
-#     ["circuits/test_vector/poseidon2/mt_7"]="mt_7" 
-#     ["circuits/test_vector/poseidon2/mt_8"]="mt_8" 
-#     ["circuits/test_vector/poseidon2/mt_9"]="mt_9" 
-#     ["circuits/test_vector/poseidon2/mt_10"]="mt_10" 
-
-#     ["circuits/test_vector/neptune/mt_0"]="mt_0" 
-#     ["circuits/test_vector/neptune/mt_1"]="mt_1" 
-#     ["circuits/test_vector/neptune/mt_2"]="mt_2" 
-#     ["circuits/test_vector/neptune/mt_3"]="mt_3" 
-#     ["circuits/test_vector/neptune/mt_4"]="mt_4" 
-#     ["circuits/test_vector/neptune/mt_5"]="mt_5" 
-#     ["circuits/test_vector/neptune/mt_6"]="mt_6" 
-#     ["circuits/test_vector/neptune/mt_7"]="mt_7" 
-#     ["circuits/test_vector/neptune/mt_8"]="mt_8" 
-#     ["circuits/test_vector/neptune/mt_9"]="mt_9" 
-#     ["circuits/test_vector/neptune/mt_10"]="mt_10" 
-# )
-
 PROOF_SYS=(
     # "groth16"
     "plonk"
@@ -143,14 +17,14 @@ CIRCUIT_NAMES=(
     # "circuits/test_vector/gmimc/mt_9"
     # "circuits/test_vector/gmimc/mt_10"
 
-    "circuits/test_vector/mimc/mt_0"
-    "circuits/test_vector/mimc/mt_1"
-    "circuits/test_vector/mimc/mt_2"
-    "circuits/test_vector/mimc/mt_3"
-    "circuits/test_vector/mimc/mt_4"
-    "circuits/test_vector/mimc/mt_5"
-    "circuits/test_vector/mimc/mt_6"
-    "circuits/test_vector/mimc/mt_7"
+    # "circuits/test_vector/mimc/mt_0"
+    # "circuits/test_vector/mimc/mt_1"
+    # "circuits/test_vector/mimc/mt_2"
+    # "circuits/test_vector/mimc/mt_3"
+    # "circuits/test_vector/mimc/mt_4"
+    # "circuits/test_vector/mimc/mt_5"
+    # "circuits/test_vector/mimc/mt_6"
+    # "circuits/test_vector/mimc/mt_7"
     # "circuits/test_vector/mimc/mt_8"
     # "circuits/test_vector/mimc/mt_9"
     # "circuits/test_vector/mimc/mt_10"
@@ -167,7 +41,7 @@ CIRCUIT_NAMES=(
     # "circuits/test_vector/poseidon/mt_9"
     # "circuits/test_vector/poseidon/mt_10"
 
-    # "circuits/test_vector/poseidon2/mt_0"
+    "circuits/test_vector/poseidon2/mt_0"
     # "circuits/test_vector/poseidon2/mt_1"
     # "circuits/test_vector/poseidon2/mt_2"
     # "circuits/test_vector/poseidon2/mt_3"
@@ -190,6 +64,18 @@ CIRCUIT_NAMES=(
     # "circuits/test_vector/neptune/mt_8"
     # "circuits/test_vector/neptune/mt_9"
     # "circuits/test_vector/neptune/mt_10"
+
+    "circuits/test_vector/rescue/mt_0"
+    # "circuits/test_vector/rescue/mt_1"
+    # "circuits/test_vector/rescue/mt_2"
+    # "circuits/test_vector/rescue/mt_3"
+    # "circuits/test_vector/rescue/mt_4"
+    # "circuits/test_vector/rescue/mt_5"
+    # "circuits/test_vector/rescue/mt_6"
+    # "circuits/test_vector/rescue/mt_7"
+    # "circuits/test_vector/rescue/mt_8"
+    # "circuits/test_vector/rescue/mt_9"
+    # "circuits/test_vector/rescue/mt_10"
 )
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -424,6 +310,52 @@ do
                 PTAU_NAME="pot19_final"
                 INPUT_NAME="mt_10"
                 ;;
+
+
+            "circuits/test_vector/rescue/mt_0")
+                PTAU_NAME="pot10_final"
+                INPUT_NAME="mt_0"
+                ;;
+            "circuits/test_vector/rescue/mt_1")
+                PTAU_NAME="pot12_final"
+                INPUT_NAME="mt_1"
+                ;;
+            "circuits/test_vector/rescue/mt_2")
+                PTAU_NAME="pot13_final"
+                INPUT_NAME="mt_2"
+                ;;
+            "circuits/test_vector/rescue/mt_3")
+                PTAU_NAME="pot12_final"
+                INPUT_NAME="mt_3"
+                ;;
+            "circuits/test_vector/rescue/mt_4")
+                PTAU_NAME="pot13_final"
+                INPUT_NAME="mt_4"
+                ;;
+            "circuits/test_vector/rescue/mt_5")
+                PTAU_NAME="pot14_final"
+                INPUT_NAME="mt_5"
+                ;;
+            "circuits/test_vector/rescue/mt_6")
+                PTAU_NAME="pot15_final"
+                INPUT_NAME="mt_6"
+                ;;
+            "circuits/test_vector/rescue/mt_7")
+                PTAU_NAME="pot16_final"
+                INPUT_NAME="mt_7"
+                ;;
+            "circuits/test_vector/rescue/mt_8")
+                PTAU_NAME="pot17_final"
+                INPUT_NAME="mt_8"
+                ;;
+            "circuits/test_vector/rescue/mt_9")
+                PTAU_NAME="pot18_final"
+                INPUT_NAME="mt_9"
+                ;;
+            "circuits/test_vector/rescue/mt_10")
+                PTAU_NAME="pot19_final"
+                INPUT_NAME="mt_10"
+                ;;
             *)
                 echo "Unknown CIRCUIT_NAME: $CIRCUIT_NAME"
                 exit 1
@@ -448,6 +380,9 @@ do
         echo "-------------------------------------------------------"
         echo ">> 1.2 Generating Witness"
         node $GEN_DIR/generate_witness.js $GEN_DIR/$INPUT_NAME.wasm $INPUT $TARGET_DIR/witness.wtns
+        echo "-------------------------------------------------------"
+        echo ">> 1.3 View information about the circuit"
+        snarkjs r1cs info $TARGET_DIR/$INPUT_NAME.r1cs
         echo "-------------------------------------------------------"
 
         # ******************************************************
