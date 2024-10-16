@@ -1,0 +1,412 @@
+{
+  "mimc": {
+    "m0": {
+      "prove": {
+        "user_time": "0.55",
+        "max_resident_size": "238263040"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "329914688"
+      }
+    },
+    "m1": {
+      "prove": {
+        "user_time": "0.82",
+        "max_resident_size": "329914688"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160743424"
+      }
+    },
+    "m2": {
+      "prove": {
+        "user_time": "1.34",
+        "max_resident_size": "404166400"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160202752"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "2.13",
+        "max_resident_size": "398498496"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159186944"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "3.73",
+        "max_resident_size": "406673792"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159776768"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "6.97",
+        "max_resident_size": "621812800"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161398784"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "13.37",
+        "max_resident_size": "950439552"
+      },
+      "verify": {
+        "user_time": "26.15",
+        "max_resident_size": "1826097856"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "26.15",
+        "max_resident_size": "1826097856"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159334400"
+      }
+    }
+  },
+  "poseidon": {
+    "m0": {
+      "prove": {
+        "user_time": "0.42",
+        "max_resident_size": "174626752"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161480704"
+      }
+    },
+    "m1": {
+      "prove": {
+        "user_time": "0.48",
+        "max_resident_size": "200022016"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160858112"
+      }
+    },
+    "m2": {
+      "prove": {
+        "user_time": "0.61",
+        "max_resident_size": "253238464"
+      },
+      "verify": {
+        "user_time": "0.38",
+        "max_resident_size": "158957568"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "0.71",
+        "max_resident_size": "326081600"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160464896"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "1",
+        "max_resident_size": "421059008"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159334400"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "1.54",
+        "max_resident_size": "409247104"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161267712"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "2.42",
+        "max_resident_size": "432594048"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "162217984"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "4.5",
+        "max_resident_size": "528064448"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160055296"
+      }
+    }
+  },
+  "poseidon2": {
+    "m0": {
+      "prove": {
+        "user_time": "0.43",
+        "max_resident_size": "174446976"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159318016"
+      }
+    },
+    "m1": {
+      "prove": {
+        "user_time": "0.48",
+        "max_resident_size": "201366464"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160743424"
+      }
+    },
+    "m2": {
+      "prove": {
+        "user_time": "0.56",
+        "max_resident_size": "253172032"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160202752"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "0.73",
+        "max_resident_size": "321183040"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159186944"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "1",
+        "max_resident_size": "397105792"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159776768"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "1.66",
+        "max_resident_size": "413227520"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161398784"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "2.57",
+        "max_resident_size": "415307968"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159809536"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "4.45",
+        "max_resident_size": "472964544"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159334400"
+      }
+    }
+  },
+  "neptune": {
+    "m0": {
+      "prove": {
+        "user_time": "0.47",
+        "max_resident_size": "175544640"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159318016"
+      }
+    },
+    "m1": {
+      "prove": {
+        "user_time": "0.54",
+        "max_resident_size": "202004480"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160743424"
+      }
+    },
+    "m2": {
+      "prove": {
+        "user_time": "0.63",
+        "max_resident_size": "246241664"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160202752"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "0.87",
+        "max_resident_size": "323673216"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159186944"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "1.4",
+        "max_resident_size": "418634432"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159776768"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "2.18",
+        "max_resident_size": "431887616"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161398784"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "3.79",
+        "max_resident_size": "494409984"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159809536"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "6.79",
+        "max_resident_size": "650091520"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159334400"
+      }
+    }
+  },
+  "gmimc": {
+    "m0": {
+      "prove": {
+        "user_time": "0.59",
+        "max_resident_size": "202266560"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159318016"
+      }
+    },
+    "m1": {
+      "prove": {
+        "user_time": "0.9",
+        "max_resident_size": "279616896"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160743424"
+      }
+    },
+    "m2": {
+      "prove": {
+        "user_time": "1.58",
+        "max_resident_size": "427987776"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "160202752"
+      }
+    },
+    "m3": {
+      "prove": {
+        "user_time": "2.86",
+        "max_resident_size": "494524544"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159186944"
+      }
+    },
+    "m4": {
+      "prove": {
+        "user_time": "5.22",
+        "max_resident_size": "639734784"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159776768"
+      }
+    },
+    "m5": {
+      "prove": {
+        "user_time": "9.9",
+        "max_resident_size": "893128896"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "161398784"
+      }
+    },
+    "m6": {
+      "prove": {
+        "user_time": "19.46",
+        "max_resident_size": "1727122688"
+      },
+      "verify": {
+        "user_time": "0.36",
+        "max_resident_size": "159809536"
+      }
+    },
+    "m7": {
+      "prove": {
+        "user_time": "38.27",
+        "max_resident_size": "2860276096"
+      },
+      "verify": {
+        "user_time": "0.37",
+        "max_resident_size": "159334400"
+      }
+    }
+  }
+}
